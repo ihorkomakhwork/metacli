@@ -1,0 +1,44 @@
+{
+  "name": "metasql",
+  "version": "0.1.0",
+  "description": "MetaCLI is cli to genreate trivial code",
+  "types": "metasql.d.ts",
+  "bin": {
+    "metacli": "./cli.js"
+  },
+  "files": [
+    "bin/",
+    "metasql.d.ts"
+  ],
+  "scripts": {
+    "lint": "eslint . && prettier --check \"**/*.js\" \"**/*.json\" \"**/*.md\" \"**/.*rc\" \"**/*.yml\" \"**/*.ts\"",
+    "fmt": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\" \"**/.*rc\" \"**/*.yml\" \"**/*.ts\"",
+    "types": "tsc -p tsconfig.json",
+    "test": "npm run lint && npm run types && metatests test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [],
+  "author": "Ihor Komakh ihorkomakhwork@gmail.com",
+  "engines": {
+    "node": "18 || 20 || 21"
+  },
+  "dependencies": {
+    "concolor": "^1.1.0",
+    "metasql": "^3.0.0-alpha.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.0",
+    "@types/pg": "^8.10.2",
+    "eslint": "^8.47.0",
+    "eslint-config-metarhia": "^8.2.1",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "metatests": "^0.8.2",
+    "prettier": "^3.0.2",
+    "typescript": "^5.1.6"
+  }
+}
