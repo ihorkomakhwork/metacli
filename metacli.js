@@ -9,9 +9,7 @@ const terminal = require('./lib/terminal');
 
 const [, , command, ...args] = process.argv;
 
-const schemaPath = __dirname.includes('node_modules')
-  ? path.join(process.cwd(), 'application/schemas')
-  : path.join(__dirname, '../node_modules/metadomain/schemas');
+const schemaPath = path.join(process.cwd(), './application/schemas');
 
 const commands = {
   'generate-db-schema': () => metasql.create(schemaPath, schemaPath),
@@ -31,7 +29,6 @@ const commands = {
     const params = terminal.parseParams(args);
     return await commands[command](params);
   } catch (error) {
-    const errorMessage = terminal.format.error(error.message);
-    return terminal.error(errorMessage);
+    return terminal.error(error.message);
   }
 })();
