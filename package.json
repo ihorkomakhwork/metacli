@@ -4,12 +4,9 @@
   "description": "MetaCLI is cli to genreate trivial code",
   "types": "metasql.d.ts",
   "bin": {
-    "metacli": "./cli.js"
+    "metacli": "./cli"
   },
-  "files": [
-    "bin/",
-    "metasql.d.ts"
-  ],
+  "main": "./metacli.js",
   "scripts": {
     "lint": "eslint . && prettier --check \"**/*.js\" \"**/*.json\" \"**/*.md\" \"**/.*rc\" \"**/*.yml\" \"**/*.ts\"",
     "fmt": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\" \"**/.*rc\" \"**/*.yml\" \"**/*.ts\"",

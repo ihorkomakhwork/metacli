@@ -72,7 +72,7 @@ services:
       - POSTGRES_DB=application
     volumes:
       - ./data/postgres/:/var/lib/postgresql/data
-      - ./database/structure.sql:/docker-entrypoint-initdb.d/1.sql
+      - ./database/database.sql:/docker-entrypoint-initdb.d/1.sql
       - ./database/data.sql:/docker-entrypoint-initdb.d/2.sql
     ports:
       - 127.0.0.1:5432:5432
